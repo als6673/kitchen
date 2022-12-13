@@ -1,373 +1,325 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>바다여행</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <title>새미네부엌 플랫폼</title>
     <style>
-        @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
-
-        @font-face {
-            font-family: 'NanumBarunGothic';
-            font-style: normal;
-            font-weight: 400;
-            src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-            src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'NanumBarunGothic';
-            font-style: normal;
-            font-weight: 700;
-            src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
-            src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
-        }
-
-        @font-face {
-            font-family: 'NanumBarunGothic';
-            font-style: normal;
-            font-weight: 300;
-            src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
-            src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
-        }
-
-
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
         body {
             color: #333;
             line-height: 1;
-            font-family: 'NanumBarunGothic';
-            font-weight: 400;
-            min-width: 1280px;
         }
 
         header {
-            width: 1280px;
-            margin: 0 auto;
             height: 100px;
-            line-height: 100px;
+            border-bottom: 1px solid #eee;    
+        }
+        header .inner {
             display: flex;
             justify-content: space-between;
+            width: calc(100% - 180px);
+            margin: 0 auto;
+            height: 100%;
+            align-items: center;
+        }
+        header .inner ul {
+            display: flex;
+            align-items: center;
         }
 
-        header ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 17px;
-            margin-left: 40px;
+        header .inner nav ul li {
+            margin: 0 30px;
+            font-weight: 700;
+            font-size: 18px;
         }
 
-        header h1 a img {
-            width: 190px;
+        header .inner nav ul li a {
+            display: flex;
+            align-items: center;
+        }
+        
+        header .inner .right_menu li:nth-child(1) {
+            margin-right: 20px;
         }
 
-        header ul li {
-            list-style: none;
-            display: inline-block;
+        header .inner .right_menu li:nth-child(2) img {
+            width: 30px;
+            height: 30px;
+            align-items: center;
         }
 
         .main_visual {
-            height: 700px;
-        }
-
-        .main_visual video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .cont01 {
-            background-color: #f7f7f7;
-            padding: 100px 0;
-        }
-
-        .cont01 .inner {
-            width: 1280px;
+            width: calc(100%-180px);
             margin: 0 auto;
         }
 
-        .cont01 .inner .title h2 {
-            font-size: 35px;
-            text-align: center;
-            font-family: 'NanumBarunGothic';
-            font-weight: 800;
+        .main_visual img {
+            width: 100%;
+            margin: 0 60px;
+            box-sizing: border-box;
         }
 
-        .cont01 .inner .title p {
-            font-size: 20px;
-            text-align: center;
-            margin: 20px 0 40px;
+        .cont01 {
+            padding: 80px 0;
+        }
+
+        .cont01 .inner {
+            width: 1440px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        .cont01 .inner h3 {
+            font-size: 24px;
+            margin-bottom: 40px;
+            margin-left: 20px;
+            
         }
 
         .cont01 .inner .list {
             display: flex;
+            flex-wrap: wrap;
+            /* 가로로나열된 문단을 세로로 떨어뜨려줌 */
             justify-content: space-between;
+            margin: 0 20px;
+            
         }
 
-        .cont01 .inner .list div {
-            width: 308px;
-            border-radius: 20px;
-            background-color: #fff;
-            overflow: hidden;
-        }
-
-        .cont01 .inner .list div img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .cont01 .inner .list div ul {
-            padding: 20px;
-        }
-
-        .cont01 .inner .list div ul li {
-            list-style: none;
+        .cont01 .inner .list .item {
+            width: 290px;
+            margin-bottom: 50px;
 
         }
 
-        .cont01 .inner .list div ul li:nth-child(1) {
-            font-size: 22px;
-            margin-bottom: 25px;
-            font-weight: 700;
+        .cont01 .inner .list .item ul {
+            width: 290px;
+            
+            border-radius: 15px;
         }
 
-        .cont02 {
-            background-color: #f7f7f7;
-            width: 100%;
-            padding: 100px 0;
-        }
-
-        .cont02 .inner {
-            width: 1280px;
-            margin: 0 auto;
-        }
-
-        .cont02 .inner .title h2 {
-            font-size: 35px;
-            text-align: center;
-            font-family: 'NanumBarunGothic';
-            font-weight: 800;
-        }
-
-        .cont02 .inner .title p {
-            font-size: 20px;
-            text-align: center;
-            margin: 20px 0 40px;
-        }
-
-        .cont02 .inner .list {
-            display: flex;
-            justify-content: space-between;
-            background-color: #f7f7f7;
-        }
-
-        .cont02 .inner .list div {
-            width: 308px;
-            border-radius: 20px;
-            background-color: #fff;
-            overflow: hidden;
-        }
-
-        .cont02 .inner .list div img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-
-        }
-
-        .cont02 .inner .list div:hover img {
-            transition: 0.7s;
+        .cont01 .inner .list .item:hover ul li:nth-child(1) img {
             transform: scale(1.2);
+            /* 선택자 확대(1.2배만큼) */
         }
 
-        .cont02 .inner .list div figure {
+        .cont01 .inner .list ul li:nth-child(1) {
             width: 100%;
-            height: 250px;
+            height: 290px;
             overflow: hidden;
-            border-radius: 20px;
-
+            border-radius: 15px;
         }
 
-        .cont02 .inner .list div ul {
-            padding: 20px;
+        .cont01 .inner .list ul li:nth-child(1) img {
+            width: 100%;
+            transition: 0.7s;
         }
 
-        .cont02 .inner .list div ul li {
-            list-style: none
-        }
+        
 
-        .cont02 .inner .list div ul li:nth-child(1) {
-            font-size: 22px;
+        .cont01 .inner .list ul li:nth-child(2) {
+            color: #0A0A0A;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
-        .cont02 .inner .list div ul li i {
-            font-size: 20px;
-            color: rgb(98, 104, 104);
+        .cont01 .inner .list ul li:nth-child(3) {
+            color: #424242;
+            margin-bottom: 20px;
         }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 50px 0;
+        .cont01 .inner .list ul li:nth-child(4) {
+            margin-bottom: 180px;
+            color: #424242;
         }
 
-        footer .inner {
-            width: 1280px;
-            margin: 0 auto;
-        }
-
-        footer .inner ul li {
-            list-style: none;
-            display: inline-block ;
-            margin-right: 30px;
-        }
-
-        footer .inner p {
-            margin-top: 30px;
+        .cont01 .inner .list .item div ul li {
+            display: inline-block;
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.780);
+            margin-right: 40px;
         }
+
+        .cont01 .inner .list .item div ul li img {
+            vertical-align: middle;
+            margin-bottom: 40px;
+            object-fit: cover;
+            /* 인라인요소가 있을 때 수직정렬
+            inline,
+            display:inline,
+            display:inline-block */
+        }
+
+
+    
     </style>
-
 </head>
-
 <body>
     <header>
+       <div class="inner">
         <h1>
             <a href="#">
-                <img src="img/logo-seantour.svg" alt="바다여행로고">
+                <img src="img/새미네logo1.png" alt="새미네부엌">
             </a>
         </h1>
-        <ul>
-            <li><a href="#">추천여행</a></li>
-            <li><a href="#">어촌체험휴양마을</a></li>
-            <li><a href="#">여행정보</a></li>
-            <li><a href="#">공유바다</a></li>
-
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="#">요리 상담소</a></li>
+                <li><a href="#">요리법 연구소</a></li>
+                <li><a href="#">요리해요</a></li>
+                <li><a href="#">맛있는 추억을 그리다</a></li>
+                <li><a href="#"><img src="img/semie-wow.svg" alt="wow">이벤트</a></li>
+            </ul>
+        </nav>
+        <ul class="right_menu">
+            <ul>
+                <li><a href="#"><img src="img/다운로드.jpg" alt="검색"></a></li>
+                <li><a href="#"><img src="img/유저.png" alt="유저"></a></li>
+            </ul>
+        </ul><!-- .right_menu end -->
+       </div><!-- .inner end -->
     </header>
+
     <section class="main_visual">
-        <video autoplay loop muted controls>
-            <source src="img/비디오2.mp4" type="video/mp4">
-        </video>
+        <img src="img/main_visual.jpg" alt="나를 즐겁게 한 요리">
     </section><!-- .main_visual end -->
 
     <section class="cont01">
         <div class="inner">
-            <div class="title">
-                <h2>테마여행</h2>
-                <p>바다여행의 테마별 여행코스를 만나보세요.</p>
-            </div> <!-- .title 1 end -->
-
+            <h3>우리 함께 요리해볼까요?</h3>
             <div class="list">
-                <div>
-                    <img src="img/istockphoto-1340565361-170667a.png" alt="제주도">
+
+                <div class="item">
+                <ul>
+                    <li>
+                        <a href="#"><img src="img/cont01_img01.png" alt="cont01_img01"></a>
+                    </li>
+                    <li>스트레스가 날아가는 순간!</li>
+                    <li>찌릿! 매콤 얼얼 마라탕과 마라샹궈</li>
+                    <li>
+                        <a href="#"><img src="img/다운로드하트.jpg" alt="좋아요">22</a>
+                        <a href="#"><img src="img/다운로드 말풍선.jpg" alt="말풍선">4</a>
+                    </li>
+                </ul>
+                </div><!-- item1 end -->
+
+                <div class="item">
                     <ul>
-                        <li>서귀포 바다 배낚시</li>
-                        <li>제주도 서귀포시</li>
+                        <li>
+                            <a href="#"><img src="img/cont01_img02.png" alt="cont01_img02"></a>
+                        </li>
+                        <li>스트레스가 날아가는 순간!</li>
+                        <li>찌릿! 매콤 얼얼 마라탕과 마라샹궈</li>
+                        <li>
+                            <a href="#"><img src="img/다운로드하트.jpg" alt="좋아요">22</a>
+                            <a href="#"><img src="img/다운로드 말풍선.jpg" alt="말풍선">4</a>
+                        </li>
                     </ul>
-                </div> <!-- 1 end -->
+                    </div><!-- item2 end -->
 
-                <div>
-                    <img src="img/정동진.png" alt="정동진">
-                    <ul>
-                        <li>정동진해변 통일공원</li>
-                        <li>강원도 강릉시</li>
-                    </ul>
-                </div> <!-- 2 end -->
+                    <div class="item">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="img/cont01_img03.png" alt="cont01_img03"></a>
+                            </li>
+                            <li>스트레스가 날아가는 순간!</li>
+                            <li>찌릿! 매콤 얼얼 마라탕과 마라샹궈</li>
+                            <li>
+                                <a href="#"><img src="img/다운로드하트.jpg" alt="좋아요">22</a>
+                                <a href="#"><img src="img/다운로드 말풍선.jpg" alt="말풍선">4</a>
+                            </li>
+                        </ul>
+                        </div><!-- item3 end -->
 
-                <div>
-                    <img src="img/강화도 일출.png" alt="강화도">
-                    <ul>
-                        <li>강화도 동막해변 일출</li>
-                        <li>인천광역시 강화군</li>
-                    </ul>
-                </div> <!-- 3 end -->
-
-                <div>
-                    <img src="img/촛대바위.png" alt="촛대바위">
-                    <ul>
-                        <li>추암해변 촛대바위</li>
-                        <li>강원도 동해시</li>
-                    </ul>
-                </div> <!-- 4 end -->
-            </div>
-
-            <section class="cont02">
-                <div class="inner">
-                    <div class="title">
-                        <h2>어촌체험휴양 마을</h2>
-                        <p>바다여행에서 추천하는 체험마을을 만나보세요.</p>
-                    </div> <!-- .title 2 end -->
-
-                    <div class="list">
-                        <div>
-                            <figure>
-                                <img src="img/휴양마을1.png" alt="휴양마을1">
-                            </figure>
+                        <div class="item">
                             <ul>
-                                <li>왕산마을</li>
-                                <li>충청남도 서산지곡면 중왕뱃마을길 28 왕산 어민회관</li>
+                                <li>
+                                    <a href="#"><img src="img/cont01_img04.png" alt="cont01_img04"></a>
+                                </li>
+                                <li>스트레스가 날아가는 순간!</li>
+                                <li>찌릿! 매콤 얼얼 마라탕과 마라샹궈</li>
+                                <li>
+                                    <a href="#"><img src="img/다운로드하트.jpg" alt="좋아요">22</a>
+                                    <a href="#"><img src="img/다운로드 말풍선.jpg" alt="말풍선">4</a>
+                                </li>
                             </ul>
-                        </div>
-                        <div>
-                            <figure>
-                                <img src="img/휴양마을2.png" alt="휴양마을2">
-                            </figure>
-                            <ul>
-                                <li>고창 장호마을</li>
-                                <li>전라북도 고창군 상하면 명사십리로 282-42 </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <figure>
-                                <img src="img/휴향마을3.png" alt="휴양마을3">
-                            </figure>
-                            <ul>
-                                <li>궁항마을</li>
-                                <li>경상남도 통영시 산양읍 궁항길 46-8 </li>
-                            </ul>
+                            </div><!-- item4 end -->
 
-                        </div>
-                        <div>
-                            <figure>
-                                <img src="img/휴양마을4.png" alt="휴양마을4">
-                            </figure>
-                            <ul>
-                                <li>냉천마을</li>
-                                <li>경상남도 남해군 창선면 동부대로 2810-13</li>
-                            </ul>
+                            <div class="item">
+                                <ul>
+                                    <li>
+                                        <a href="#"><img src="img/cont01_img05.png" alt="cont01_img05"></a>
+                                    </li>
+                                    <li>스트레스가 날아가는 순간!</li>
+                                    <li>찌릿! 매콤 얼얼 마라탕과 마라샹궈</li>
+                                    <li>
+                                        <a href="#"><img src="img/다운로드하트.jpg" alt="좋아요">22</a>
+                                        <a href="#"><img src="img/다운로드 말풍선.jpg" alt="말풍선">4</a>
+                                    </li>
+                                </ul>
+                                </div><!-- item5 end -->
 
-                        </div>
-                    </div> <!-- .list end -->
-            </section>
+                                <div class="item">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><img src="img/cont01_img06.png" alt="cont01_img06"></a>
+                                        </li>
+                                        <li>스트레스가 날아가는 순간!</li>
+                                        <li>찌릿! 매콤 얼얼 마라탕과 마라샹궈</li>
+                                        <li>
+                                            <a href="#"><img src="img/다운로드하트.jpg" alt="좋아요">22</a>
+                                            <a href="#"><img src="img/다운로드 말풍선.jpg" alt="말풍선">4</a>
+                                        </li>
+                                    </ul>
+                                    </div><!-- item6 end -->
+        
+                                    <div class="item">
+                                        <ul>
+                                            <li>
+                                                <a href="#"><img src="img/cont01_img07.png" alt="cont01_img07"></a>
+                                            </li>
+                                            <li>스트레스가 날아가는 순간!</li>
+                                            <li>찌릿! 매콤 얼얼 마라탕과 마라샹궈</li>
+                                            <li>
+                                                <a href="#"><img src="img/다운로드하트.jpg" alt="좋아요">22</a>
+                                                <a href="#"><img src="img/다운로드 말풍선.jpg" alt="말풍선">4</a>
+                                            </li>
+                                        </ul>
+                                        </div><!-- item7 end -->
+                
+                                        <div class="item">
+                                            <ul>
+                                                <li>
+                                                    <a href="#"><img src="img/cont01_img08.png" alt="cont01_img08"></a>
+                                                </li>
+                                                <li>스트레스가 날아가는 순간!</li>
+                                                <li>찌릿! 매콤 얼얼 마라탕과 마라샹궈</li>
+                                                <li>
+                                                    <a href="#"><img src="img/다운로드하트.jpg" alt="좋아요">22</a>
+                                                    <a href="#"><img src="img/다운로드 말풍선.jpg" alt="말풍선">4</a>
+                                                </li>
+                                            </ul>
+                                            </div><!-- item8 end -->
+                            
 
-            <footer>
-                <div class="inner">
-                    <ul>
-                        <li>바다여행소개</li>
-                        <li>이메일무단수집거부</li>
-                        <li>저작권보호정책</li>
-                    </ul>
-                    <p>한국어촌어항공단 : (08588) 서울특별시 금천구 가산디지털2로 53 한라시그마밸리 12층</p>
+            </div><!-- .list end -->
 
-                </div>
-            </footer>
+            
+        </div><!-- .ineer end -->
 
-
+    </section><!-- .cont01 end -->
 </body>
-
 </html>
